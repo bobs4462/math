@@ -72,7 +72,8 @@ letting $y = 1$ we have $nx > 1$ and $x > \frac{1}{n}$
 \emph{BREAKING HERE. APOSTOL IS KINDA TOO HARD ON PROOFS. MIGHT RETURN TO IT LATER}
 
 \section*{SPIVAK ONE VARIABLE CALCULUS}
-\subsection*{CHAPTER 1 Properties of numbers}
+\section*{CHAPTER 1}
+\subsection*{Properties of numbers}
 \begin{enumerate}
   \item $\forall (a, b, c),  a + (b + c) = (a + b) + c$
   \item $\forall a,  a + 0 = 0 + a = a$
@@ -83,10 +84,121 @@ letting $y = 1$ we have $nx > 1$ and $x > \frac{1}{n}$
   \item $\forall a: a \ne 0, \exists a^{-1}$ such that $aa^{-1} = 1$
   \item $\forall (a, b), ab = ba$
   \item $\forall (a, b, c), a(b + c) = ab + ac$
-  \item $\forall a, a = 0$ or $a \in \mathbb{Z}^+$ or $-a \in \mathbb{Z}^+$
-  \item $\forall (a, b)$ if $a \in \mathbb{Z}^+$ and $b \in \mathbb{Z}^+$ then $a + b \in \mathbb{Z}^+$
-  \item $\forall (a, b)$ if $a \in \mathbb{Z}^+$ and $b \in \mathbb{Z}^+$ then $ab \in \mathbb{Z}^+$
+  \item $\forall a, a = 0$ or $a \in \mathbb{R}^+$ or $-a \in \mathbb{R}^+$
+  \item $\forall (a, b)$ if $a \in \mathbb{R}^+$ and $b \in \mathbb{R}^+$ then $a + b \in \mathbb{R}^+$
+  \item $\forall (a, b)$ if $a \in \mathbb{R}^+$ and $b \in \mathbb{R}^+$ then $ab \in \mathbb{R}^+$
 \end{enumerate}
+
+\subsection*{Theorems related to numbers}
+\begin{enumerate}
+  \item $\forall (a, b), |a + b| \leq |a| + |b|$
+\end{enumerate}
+
+\subsection*{\underline{Exercises}}
+1.1 IF $ax = a$ for some $a \ne 0$, then $x = 1$\\
+\emph{Proof:} 
+By multiplying both sides of equation by reciprocal of $a$ we have:
+$$aa^{-1}x = aa^{-1} \rightarrow 1x = 1 \ [P7]$$
+applying P6 we get $x = 1$
+
+\hrulefill
+
+1.2 $x^2 - y^2 = (x - y)(x + y)$\\
+\emph{Proof:}
+Apply P9 twice, let $(x + y) = c$ then 
+$$(x - y)c = xc - yc$$
+substitute back $c = (x + y)$ and reapply P9
+$$x(x + y) - y(x + y) = xx + xy - yx - yy$$
+using P8 and P3 we have:
+$$xx + xy - yx - yy = xx + xy - xy - yy = xx - yy = x^2 - y^2$$
+
+\hrulefill
+
+1.3 $x^2 = y^2 \rightarrow x = y \ or \ x = -y$\\
+\emph{Proof:}
+We can observe the fact that:
+$$\sqrt{x^2} = |x|$$
+then we can take square roots of both sides of equation:
+$$\sqrt{x^2} = \sqrt{y^2} = |x| = |y|$$
+then we have 4 cases:
+$$x \geq 0, y \geq 0$$
+$$x \leq 0, y \geq 0$$
+$$x \leq 0, y \leq 0$$
+$$x \geq 0, y \leq 0$$
+if the 1st or 3rd case is true, then $x = y$, if 2nd or 4th case is true, then $x = - y$ 
+
+\hrulefill
+
+1.4 $x^3 - y^3 = (x - y)(x^2 + xy + y^2)$\\
+\emph{Proof:}
+Triple application of P9:
+$$(x - y)(x^2 + xy + y^2) = x^3 + x^2y + xy^2 - x^2y - xy^2 - y^3$$
+using P8 and P3 again we have:
+$$x^3 + x^2y + xy^2 - x^2y - xy^2 - y^3 = x^3 + x^2y - x^2y + xy^2 - xy^2 - y^3 = x^3 - y^3$$ 
+
+\hrulefill
+
+1.5 $x^n - y^n = (x - y)(x^{n-1} + x^{n-2}y + x^{n-3}y^2 + \ldots + xy^{n-2} + y^{n-1})$\\
+\emph{Proof:} 
+We can rewrite the right hand side as as
+$$(x - y) \sum_{i=0}^{n-1}x^iy^{n-1-i} = x\sum_{i=0}^{n-1}x^iy^{n-1-i} - y\sum_{i=0}^{n-1}x^iy^{n-1-i} = $$
+$$x^n + \sum_{i=0}^{n-2}x^{i+1}y^{n-1-i} - (y^n + \sum_{i=1}^{n-1}x^iy^{n-i}) = $$
+from here, we should be able to prove that
+$$\sum_{i=0}^{n-2}x^{i+1}y^{n-1-i} = \sum_{i=1}^{n-1}x^iy^{n-i}$$
+if we were to substitute $i - 1$ with $k$ then
+$$\sum_{i=0}^{n-2}x^{i+1}y^{n-1-i} = \sum_{k=0}^{n-2}x^{k+1}y^{n-(k+1)} = \sum_{k=0}^{n-2}x^{k+1}y^{n-1-k}$$
+then, it's possible to rewrite our original equation as
+$$x^n - y^n + (\sum_{i=0}^{n-2}x^{i+1}y^{n-1-i} - \sum_{i=1}^{n-1}x^iy^{n-i} ) = x^n - y^n + 0$$
+
+\hrulefill
+
+1.6 $x^3 + y^3 = (x + y)(x^2 - xy + y^2)$\\
+\emph{Proof:} 
+Using proof of in 1.4 we can replace $y$ with $-y$ and as a result we have
+$$(x - (-y))(x^2 + x(-y) + y^2) = x^3 + x^2(-y) + xy^2 - x^2(-y) - xy^2 - (-y)^3$$
+which can be simplified as
+$$(x + y)(x^2 - xy + y^2) = x^3 - x^2y + xy^2 + x^2y - xy^2 + y^3 = x^3 + y^3$$
+
+\hrulefill
+
+2 what's wrong with the following proof? Let $x = y$, then
+$$xy = x^2$$
+$$x^2 - y^2 = xy - y^2$$
+$$(x - y)(x + y) = y(x - y)$$
+$$(x + y) = y$$
+$$2y = y$$
+$$2 = 1$$
+\emph{Solution:}
+At step 3, both sides of equation was divided by $(x - y)$ as a common factor.\\
+But from initial conditions $x = y$, it follows, that $x - y = 0$, so what
+actually happened, is division by zero (which is undefined), that's why the answer is nonsense.
+
+\hrulefill
+
+3.1 $\frac{a}{b} = \frac{ac}{bc}$, where $b, c \ne 0$\\
+\emph{Proof:}
+Let's multiply the left hand side of the equation by number $c \ne 0$ and it's\\
+multiplicative inverse $c^{-1}$, and according to P7 $cc^{-1} = 1$, and according to P6 $a1 = a$.
+$$\frac{a}{b}1 = \frac{a}{b}cc^{-1} = acb^{-1}c^{-1}$$
+Which can be rewritten as
+$$acb^{-1}c^{-1} = ac(bc)^{-1} = \frac{ac}{bc}$$
+
+\hrulefill
+
+3.2 $\frac{a}{b} + \frac{c}{d} = \frac{ad + cb}{bd}$, where $b, d \ne 0$\\
+\emph{Proof:}
+Using the same technique as in 3.1 multiply lhs of equation by $dd^{-1}$ and $bb^{-1}$
+$$(\frac{a}{b} + \frac{c}{d})dd^{-1}bb^{-1} = ab^{-1}bb^{-1}dd^{-1} + cd^{-1}bb^{-1}dd^{-1} = $$
+$$(ad)(b^{-1}d^{-1}) + cb(b^{-1}d^{-1}) = (ad + cb)(b^{-1}d^{-1}) = \frac{ad + cb}{bd}$$
+
+
+3.5 $\frac{a}{b} / \frac{c}{d} = \frac{ad}{bc}$, where $b, d, c \ne 0$\\
+\emph{Proof:}
+Let's rewrite it in a different form
+$$ab^{-1}(cd^{-1})^{-1} = ab^{-1}(c^{-1}(d^{-1})^{-1})$$
+because $(d^{-1})^{-1} = d$, then we can make final rearrangement
+$$ab^{-1}(c^{-1}(d^{-1})^{-1}) = adb^{-1}c^{-1} = \frac{ad}{bc}$$
+
 
 \end{document}
 
