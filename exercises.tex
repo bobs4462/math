@@ -326,7 +326,7 @@ Now if neither $\exists \lambda$, such that $x_1 = \lambda y_1, x_2 = \lambda y_
 $$0 < (\lambda y_1 - x_1)^2 + (\lambda y_2 - x_2)^2 = \lambda^2(y_1^2 + y_2^2) - 2\lambda(x_1y_1 + x_2y_2) + (x_1^2 + x_2^2)$$
 which is a quadratic equation of variable $\lambda$,\\
 thus because $\lambda^2(y_1^2 + y_2^2) - 2\lambda(x_1y_1 + x_2y_2) + (x_1^2 + x_2^2) \ne 0, \forall \lambda \in \mathbb{R}$,\\
-we can say that $b^2 - 4ac < 0$, i.e the determinat is negative, substituting:
+we can say that $b^2 - 4ac < 0$, i.e the discriminant is negative, substituting:
 $$a = (y_1^2 + y_2^2), b = 2(x_1y_1 + x_2y_2), c = (x_1^2 + x_2^2)$$
 $$[2(x_1y_1 + x_2y_2)]^2 - 4(y_1^2 + y_2^2)(x_1^2 + x_2^2) < 0$$
 $$(x_1y_1 + x_2y_2)^2 - (y_1^2 + y_2^2)(x_1^2 + x_2^2) < 0$$
@@ -334,12 +334,24 @@ $$(x_1y_1 + x_2y_2)^2 < (y_1^2 + y_2^2)(x_1^2 + x_2^2)$$
 $$x_1y_1 + x_2y_2 < \sqrt{(y_1^2 + y_2^2)(x_1^2 + x_2^2)}$$
 which is Shwartz inequality
 
+\hrulefill
+
+18.3 \underline{Proof 3} Let's start with the following inequality:
+$$0 \leq (x - y)^2 = x^2 - 2xy + y^2$$ 
+$$2xy \leq x^2 + y^2$$ 
+now let's consider following numbers $x$ and $y$
+$$x = \frac{x_i}{\sqrt{x_1^2 + x_2^2}}, y = \frac{y_i}{\sqrt{y_1^2 + y_2^2}}, i = 1, 2$$
+let's substitute them into $2xy \leq x^2 + y^2$
+$$2\frac{x_1}{\sqrt{x_1^2 + x_2^2}} \frac{y_1}{\sqrt{y_1^2 + y_2^2}} \leq \left(\frac{x_1}{\sqrt{x_1^2 + x_2^2}}\right)^2 + \left(\frac{y_1}{\sqrt{y_1^2 + y_2^2}}\right)^2$$
+$$2\frac{x_2}{\sqrt{x_1^2 + x_2^2}} \frac{y_2}{\sqrt{y_1^2 + y_2^2}} \leq \left(\frac{x_2}{\sqrt{x_1^2 + x_2^2}}\right)^2 + \left(\frac{y_2}{\sqrt{y_1^2 + y_2^2}}\right)^2$$
+adding those inequalities together we have
+$$\frac{2x_1y_1 + 2x_2y_2}{\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2}} \leq \left(\frac{x_1^2 + x_2^2}{(\sqrt{x_1^2 + x_2^2})^2}\right) + \left(\frac{y_1^2 + y_2^2}{(\sqrt{y_1^2 + y_2^2})^2}\right)$$
+$$\frac{2(x_1y_1 + x_2y_2)}{\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2}} \leq 1 + 1$$
+$$\frac{(x_1y_1 + x_2y_2)}{\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2}} \leq 1$$
+and because $\sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2} > 0$, we can multiply both sides by it
+$$x_1y_1 + x_2y_2 \leq \sqrt{x_1^2 + x_2^2}\sqrt{y_1^2 + y_2^2}$$
 
 
-% trying to solve for $\lambda$ using quadratic formula:
-% $$\lambda = \frac{2(x_1y_1 + x_2y_2) + \sqrt{[-2(x_1y_1 + x_2y_2)]^2 - 4(y_1^2 + y_2^2)(x_1^2 + x_2^2)}}{2(y_1^2 + y_2^2)}$$
-% $$\lambda = \frac{(x_1y_1 + x_2y_2) + \sqrt{(x_1y_1 + x_2y_2)^2 - (y_1^2 + y_2^2)(x_1^2 + x_2^2)}}{(y_1^2 + y_2^2)}$$
-% $$\lambda = \frac{(x_1y_1 + x_2y_2) + \sqrt{(x_1^2y_1^2 + 2x_1y_1x_2y_2 + x_2^2y_2^2) - (x_1^2y_1^2 + x_1^2y_2^2 + x_2^2y_1^2 + x_2^2y_2^2)}}{(y_1^2 + y_2^2)}$$
 \end{document}
 
 
